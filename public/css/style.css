@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'NikeBold';
+  src: url('../font/TradeGothicforNike365-BdCn.ttf')  format('truetype')
+}
+* { margin:0; padding:0; font-size: 10px; font-weight: 200;}
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+.wrapper {
+  text-align: center;
+  font-family: 'NikeBold';
+  text-transform: uppercase;
+}
+video {
+  width: 100%;
+  min-height: 250px;
+}
+h1 {
+  margin: 3% 0px;
+  font-weight: 200;
+}
+h2 {
+  margin: .2em 0 0 0;
+  font-size: 5em;
+}
+li {
+  list-style-type: none;
+  display: inline-block;
+  background-color: #222;
+  border: .1em solid #222;
+  border-radius: .15em;
+  color: #fff;
+  font-size: 1.7em;
+  padding: 0.7em 1em;
+  margin: 0.55em .3em;
+  width: 15%;
+}
+li.active {
+  background-color: #fff;
+  border: .1em solid #222;
+  color: #222;
+}
+.timer {
+  background: transparent url('../images/timer.png') no-repeat center center;
+  background-size: 15%;
+  padding: 4.5em 4em 4em 4em;
+  position: relative;
+}
+#counter {
+  font-size: 2em;
+}
+button {
+  border: 0 none;
+  background-color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+#start {
+  font-size: 1em;
+}
+#controls {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  padding-top: 4.6em;
+  left: 25%;
+}
+#resumeReset, #pause {
+  top: 8em;
+  font-size: 0.6em;
+  position: relative;
+}
+#resumeReset button {
+  margin: 0 1em;
+}
+@media only screen and (min-device-width: 500px) {
+  #resumeReset, #pause {
+    top: 12em;
+    font-size: inherit;
+  }
+  #start {
+    font-size: 2em;
+  }
+  #controls {
+    padding-top: 8.6em;
+  }
+  #counter {
+    font-size: 5em;
+  }
+  h1 {
+    margin: 4% 0px;
+    font-size: 6em;
+  }
+  h2 {
+    font-size: 13em;
+    margin-bottom: 0.25em;
+  }
+  .timer {
+    padding: 8em 4em 6em 4em;
+    margin-bottom: 6em;
+  }
+  .timer span {
+    font-size: 5em;
+  }
+  li {
+    font-size: 4.7em;
+  }
+}

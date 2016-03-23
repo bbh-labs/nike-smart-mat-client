@@ -49,6 +49,78 @@ app.post('/next', function(req, res) {
 	res.sendStatus(200);
 });
 
+app.post('/pose/hinge', function(req, res) {
+	console.log('Hinge');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 10;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/pose/pull', function(req, res) {
+	console.log('Pull');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 11;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/pose/squat', function(req, res) {
+	console.log('Squat');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 12;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/pose/push', function(req, res) {
+	console.log('Push');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 13;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/pose/lunge', function(req, res) {
+	console.log('Lunge');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 14;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/pose/rotate', function(req, res) {
+	console.log('Rotate');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 15;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
 app.listen(8080, function() {
 	setInterval(findArduino, 1000);
 

@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-	<meta charset='utf-8' />
-</head>
-<body>
-	<div id='root'>
-	</div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NIKE NTC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-	<script src='js/bundle.js'></script>
-</body>
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-startup-image" href="startup.png" sizes="750x1294">
+
+    <link rel="stylesheet" href="css/normalize.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>NTC 6 MOVES</h1>
+      <video id="videoPlayer" src="Videos/Pose1-Hinge.mp4" webkit-playsinline autoplay loop >
+
+      </video>
+
+      <h2 id="title" >Hinge</h2>
+      <div class="timer" id="timer">
+        <!--<span id="minutes">00</span>:<span id="seconds">00</span>-->
+        <p id="counter">
+          &nbsp;
+        </p>
+        <div id="controls">
+          <div id="start">
+            <button type="button" id="startBtn" name="button">Start</button>
+          </div>
+          <div id="pause">
+            <button type="button" id="pauseBtn" name="button">Pause</button>
+          </div>
+          <div id="resumeReset">
+            <button type="button" id="resumeBtn" name="button">Resume</button>
+
+            <button type="button" id="resetBtn" name="button">Reset</button>
+          </div>
+        </div>
+      </div>
+      <ul id="menu">
+        <li data-src="Videos/Pose1-Hinge.mp4" data-title="Hinge" class="active">1.Hinge</li>
+        <li data-src="Videos/Pose2-Pull.mp4" data-title="Pull">2.Pull</li>
+        <li data-src="Videos/Pose3-Squat.mp4" data-title="Squat">3.Squat</li>
+        <li data-src="Videos/Pose4-Push.mp4" data-title="Push">4.Push</li>
+        <li data-src="Videos/Pose5-Lunge.mp4" data-title="Lunge">5.Lunge</li>
+        <li data-src="Videos/Pose6-Rotate.mp4" data-title="Rotate">6.Rotate</li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
 </html>
