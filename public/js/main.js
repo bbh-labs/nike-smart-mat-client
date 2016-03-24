@@ -1,3 +1,27 @@
+var calibrateButton = document.getElementById('calibrate');
+calibrateButton.addEventListener('click', function(e) {
+	var httpRequest = new XMLHttpRequest();
+	if (!httpRequest) {
+		alert('Cannot create an XML HTTP instance!');
+		return false;
+	}
+
+	httpRequest.open('POST', '/calibrate');
+	httpRequest.send();
+});
+
+var debugButton = document.getElementById('debug');
+debugButton.addEventListener('click', function(e) {
+	var httpRequest = new XMLHttpRequest();
+	if (!httpRequest) {
+		alert('Cannot create an XML HTTP instance!');
+		return false;
+	}
+
+	httpRequest.open('POST', '/debug');
+	httpRequest.send();
+});
+
 var ul = document.getElementById('menu'),
     start = document.getElementById('start'),
     clock = document.getElementById('timer'),

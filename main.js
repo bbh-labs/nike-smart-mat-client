@@ -16,6 +16,7 @@ function findArduino() {
 					arduinoPort.open(function(error) {
 						if (error) {
 							console.error('Failed to open serial port:', error);
+							arduinoPort = null;
 						} else {
 							console.log('Arduino connected');
 						}
@@ -37,16 +38,24 @@ app.use(express.static('public'));
 
 app.post('/previous', function(req, res) {
 	let buffer = new Buffer(1);
-	buffer[0] = 1;
-	arduinoPort.write(buffer);
+
+	if (arduinoPort) {
+		buffer[0] = 1;
+		arduinoPort.write(buffer);
+	}
+
 	res.sendStatus(200);
 });
 
 app.post('/next', function(req, res) {
 	let buffer = new Buffer(1);
-	buffer[0] = 2;
-	arduinoPort.write(buffer);
-	res.sendStatus(200);
+
+	if (arduinoPort) {
+		buffer[0] = 2;
+		arduinoPort.write(buffer);
+	}
+
+		res.sendStatus(200);
 });
 
 app.post('/pose/hinge', function(req, res) {
@@ -66,7 +75,7 @@ app.post('/pose/pull', function(req, res) {
 
 	if (arduinoPort) {
 		let buffer = new Buffer(1);
-		buffer[0] = 11;
+		buffer[0] = 12;
 		arduinoPort.write(buffer);
 	}
 
@@ -78,7 +87,7 @@ app.post('/pose/squat', function(req, res) {
 
 	if (arduinoPort) {
 		let buffer = new Buffer(1);
-		buffer[0] = 12;
+		buffer[0] = 14;
 		arduinoPort.write(buffer);
 	}
 
@@ -102,7 +111,7 @@ app.post('/pose/lunge', function(req, res) {
 
 	if (arduinoPort) {
 		let buffer = new Buffer(1);
-		buffer[0] = 14;
+		buffer[0] = 11;
 		arduinoPort.write(buffer);
 	}
 
@@ -115,6 +124,30 @@ app.post('/pose/rotate', function(req, res) {
 	if (arduinoPort) {
 		let buffer = new Buffer(1);
 		buffer[0] = 15;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/calibrate', function(req, res) {
+	console.log('Calibrate');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 3;
+		arduinoPort.write(buffer);
+	}
+
+	res.sendStatus(200);
+});
+
+app.post('/debug', function(req, res) {
+	console.log('Debug');
+
+	if (arduinoPort) {
+		let buffer = new Buffer(1);
+		buffer[0] = 9;
 		arduinoPort.write(buffer);
 	}
 
